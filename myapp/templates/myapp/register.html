@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<body>
+  <style>
+    body{background-color: #3d3d3d;}
+    .styled-button{
+      width: 100px;
+      height: 40px;
+      background-color: darkorange;
+      color: white;
+      font-family: 'Berlin Sans FB', sans-serif;
+    }
+  </style>
+  <h2 style="color: white; font-family: 'Bauhaus93', sans-serif;">Register</h2>
+  <form style="color: darkorange;
+    size: 5cap;
+    font-family: 'Bauhaus93', sans-serif;"
+method="post" action="{% url 'myapp:register' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="styled-button">Register</button>
+  </form>
+</body>
+{% endblock %}

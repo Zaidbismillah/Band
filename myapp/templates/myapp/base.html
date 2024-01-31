@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+</head>
+<body>
+    <style>
+        ul{color:darkorange;}
+        a{color:darkorange;}
+    </style>
+<nav>
+    <ul>
+        <li><a href="{% url 'myapp:home' %}">Home</a></li>
+        <li><a href="{% url 'myapp:members' %}">Members</a></li>
+        <li><a href="{% url 'myapp:songs' %}">Songs</a></li>
+        <li><a href="{% url 'myapp:register' %}">Register</a></li>
+        <li><a href="{% url 'myapp:login' %}">Login</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+<footer>
+</footer>
+
+</body>
+</html>
